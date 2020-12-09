@@ -1,0 +1,171 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+@media only screen and (max-width: 1600px)
+  /**/
+@media only screen and (max-width: 1366px)
+  /**/
+@media only screen and (max-width: 1280px)
+  /**/
+@media only screen and (max-width: 1200px)
+  /**/
+@media only screen and (max-width: 1150px)
+  .container
+    padding: 0 20px
+  .header__bottom
+    .search-input
+      width: 100%
+@media only screen and (max-width: 992px)
+
+  .header__mobile
+    display: block
+    padding: 20px 0
+  .header__balance
+    margin: 10px 0
+  .header__app
+    a
+      display: block
+      width: 100%
+  .header__wrapper, .header__bottom
+    display: none
+  .cashback__menu, .header__menu
+    li
+      margin-top: 10px
+      margin-right: 0
+      width: 100%
+  .search
+    width: 100%
+  .header__bottom
+    .search-input
+      margin-left: 0
+      padding: 13px 45px 14px;
+  .sidebar, .header__logo, .btn-cashback
+    display: none
+  .main-content
+    margin-left: 0
+    .finances
+      padding: 0 0 20px
+  .cashback__inner
+    .cashback__img
+      display: none
+
+  .balance
+    .balance__item
+      padding: 0 20px
+    .large-txt
+      font-size: 32px
+      line-height: 37px
+  .footer__map
+    flex-wrap: wrap
+  .footer__top
+    display: block
+  .footer__column
+    width: 100%
+    margin-right: 0
+  .sidebar
+    &.active
+      display: block
+      position: fixed
+      padding: 20px
+      left: 0
+      top: 0
+      min-height: 100vh
+      background: #FFFFFF
+      z-index: 33
+      width: 100%
+      max-width: inherit
+    .sidebar__inner
+      height: 100vh
+      overflow-y: scroll
+    .sidebar-close
+      display: block
+      position: absolute
+      right: 20px
+      top: 20px
+  .btn-sidebar
+    position: fixed
+    right: 20px
+    bottom: 20px
+    z-index: 10
+    display: block
+    img
+      border: 1px $orange-color solid
+      border-radius: 50%
+  .footer__icons
+    img
+      margin: 10px
+@media only screen and (max-width: 768px)
+  .btn-orange
+    margin-left: 0
+  .cashback__inner
+    display: block
+    .btn-close
+      position: absolute
+      right: 10px
+      top: 0px
+    .btn-orange
+      width: 100%
+      display: block
+      text-align: center
+      margin-top: 20px
+  .way__item
+    width: 100%
+    margin: 10px 0
+    height: auto
+  .output
+    input
+      width: 100%
+      max-width: inherit
+    .input-wrapper
+      width: 100%
+      input
+        width: 100%
+    .summa .small
+      margin-top: 10px
+      margin-left: 0
+  .custom-select
+    max-width: inherit
+  .btn-output
+    width: 100%
+  .payment__inner
+    overflow-x: scroll
+    .payment__column
+      min-width: 150px;
+  footer .footer__bottom
+    display: block
+    li
+      margin-left: 0
+      width: 100%
+      margin-top: 10px
+  .breadcrumb__inner
+    li
+      margin-top: 10px
+  .footer__logo
+    width: 150px
+@media only screen and (max-width: 660px)
+  /**/
+@media only screen and (max-width: 480px)
+  /**/
+@media only screen and (max-width: 320px)
+  /**/
+
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width: 320px)
+  /**/
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px)
+  /**/
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px)
+  /**/
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px)
+  /**/
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px)
+  /**/
+

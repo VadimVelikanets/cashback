@@ -1,0 +1,595 @@
+doctype html
+html
+    head
+        meta(charset = 'utf-8')
+        meta(name='viewport', content="initial-scale=1.0, width=device-width")
+        link(rel="stylesheet", href="css/libs.min.css")
+        link(rel="stylesheet", href="css/main.min.css")
+        title Cashback
+    body
+        header
+            .container
+                .header__mobile
+                    .flex__between
+                        img(src="images/logo.svg", alt="")
+                        a(href='#').hamburger
+                            img(src='images/hamb.svg')
+                .header__wrapper.flex__between.align__center
+                    .header__app.flex__start.flex__wrap
+                        a(href='#').flex__start.align__center
+                            span Скачай приложения для iOS
+                            img(src='images/ios.svg')
+                        a(href='#').flex__start.align__center
+                            span и Android
+                            img(src='images/android.svg')
+                    ul.header__menu.flex__start.flex__wrap
+                        mixin HeaderMenuItem(link, title)
+                            li
+                                a(href=link)=title
+                        +HeaderMenuItem('#', 'Партнерам')
+                        +HeaderMenuItem('#', 'Вопросы и ответы')
+                        +HeaderMenuItem('#', 'Поддержка')
+                        +HeaderMenuItem('#', 'Контакты')
+                    .header__balance
+                        span.bold 142 BYN
+                        span.gray / 40 BYN
+                    .header__icons
+                        a(href='#')
+                            img(src='images/favorite.svg')
+                        a(href='#')
+                            img(src='images/bell.svg')
+                        a(href='#')
+                            img(src='images/profile.png', class='header__profile' width=27)
+                .header__bottom.flex__between.align__center
+                    div.flex__start.align__center
+                        a(href='#')
+                            img(src="images/logo.svg", alt="").header__logo
+                        .search
+                            input(placeholder="Магазины с высоким кэшбэком").search-input
+                    ul.cashback__menu.flex__start.flex__wrap
+                        mixin HeaderMenuItem(link, title)
+                            li
+                                a(href=link)=title
+                        +HeaderMenuItem('#', 'Все Магазины')
+                        +HeaderMenuItem('#', 'С повышенным кэшбэком')
+                        +HeaderMenuItem('#', 'Приведи друга')
+                    a(href='#', class='btn-cashback')   Увеличь кэшбэк
+
+        main
+            .cashback
+                .container
+                    .cashback__inner.flex.align__center.flex__wrap
+
+                        img(src='images/cashback.png', class='cashback__img')
+                        .cashback__txt
+                            p.bold.small Получай кэшбэк сразу на карту!
+                            p.small Кобренд–карта РРБ Банка поможет удобно получать кэшбэк.
+                        a(href='#').btn-orange.animation  Хочу карту
+
+                            a(href='#', class='btn-close')
+                                img(src='images/close.svg')
+            .breadcrumb
+                .container
+                    .breadcrumb__inner.smaller
+                        ul.flex__start.flex__wrap
+                            li
+                                a(href='#')
+                                    span Главная
+                            li
+                                a(href='#')
+                                    span Личный кабинет
+                            li
+                                span Вывод средств
+            .content
+                .container
+                    .wrapper.flex__between
+                        .sidebar
+                            a(href='#', class='sidebar-close')
+                                img(src='images/close.svg')
+                            .sidebar__inner
+                                img(src='images/profile-img.png', width=80).profile-img
+                                .big.bold Konstantinopolsky
+                                a(href='#').link.gray.smaller.flex__start
+                                    span konstantinopolsky.cashuback.by
+                                    img(src='images/link.svg')
+                                .sidebar__status.flex__start.smaller
+                                    span СТАТУС: #[span.bold  START]
+                                    img(src='images/info.svg')
+                                .sidebar__expert.smaller
+                                    span.gray До статуса Expert:
+                                    span  20 BYN
+                                ul.sidebar__menu.body
+                                    li
+                                        a(href='#').flex__start.gray
+                                            img(src='images/profile.svg')
+                                            span Мой кабинет
+                                    li
+                                        a(href='#').flex__start.gray
+                                            img(src='images/case.svg')
+                                            span Заказы и финансы
+                                    li
+                                        a(href='#').flex__start.gray
+                                            img(src='images/card-gray.svg')
+                                            span Карты
+                                    li
+                                        a(href='#').flex__start.gray.active
+                                            img(src='images/wallet.svg')
+                                            span Вывод средств
+                                    li
+                                        a(href='#').flex__start.gray
+                                            img(src='images/follow.svg')
+                                            span.smaller.bold Приведи друга
+                                                .count 2
+                                ul.sidebar__settings
+                                    li
+                                        a(href='#').flex__start.gray
+                                            img(src='images/sett.svg')
+                                            span Настройки
+                                    li
+                                        a(href='#').flex__start.gray
+                                            img(src='images/help.svg')
+                                            span Помощь
+                                    li
+                                        a(href='#').flex__start.gray
+                                            img(src='images/exit.svg')
+                                            span Выход
+                        .main-content
+                            .finances
+                                h1.h1 Мои финансы
+                                p.smaller Здесь ты можешь увидеть кэшбэк за твои покупки. Пожалуйста, #[span(class='orange') свяжись с нами,]  если у тебя есть вопросы.
+                            .balance.flex__between.block
+                                .balance__item
+                                    span.body Доступно для вывода
+                                    div.large-txt #[span(class='bold') 142]  BYN
+                                .balance__item.gray
+                                    span.flex__start
+                                        span.body Ожидает начисления
+                                        img(src='images/info.svg')
+                                    div.large-txt #[span(class='bold') 40]  BYN
+                            .warning.small.block
+                                .bold Внимание!
+                                ul
+                                    li Вывод средств с разных аккаунтов на одинаковые реквизиты невозможен.
+                                    li Указывай только реальные, зарегистрированные данные.
+                                    li Твоя заявка будет обработана в течение 1-3 рабочих дней.
+                                    li Заявка находится «В ожидании» более 2 дней — проверь почту.
+                            form.block.output
+                                .h2.bold Выберите способ вывода
+                                .ways.flex__start.flex__wrap
+                                     .way__item.active
+                                         div.flex__start.align__center
+                                            img(src='images/visa.svg')
+                                            img(src='images/mc.svg')
+                                         .body.bold Банковская карта
+                                         .smaller Карта Visa, MasterCard (Беларусь)
+                                     .way__item
+                                         img(src='images/rrb.svg')
+                                         .body.bold Кобренд–карта РРБ Банка
+                                         .smaller Карта Visa (Беларусь)
+                                .h2.bold Вывод средств
+                                p.gray.body  Выберите карту
+                                .custom-select
+
+                                    .select-title.flex__start.align__center
+                                        img(src='images/creditcard.svg')
+                                        span.select-name Номер карты
+                                    .options
+                                        .card__title.gray.small.bold карты
+                                        .card.flex__start
+                                            img.card-logo(src='images/mc-small.svg')
+                                            div
+                                              .card__number.align__center.flex__start
+                                                span.card__code.h3  •••• •••• ••••
+                                                span.card__end 4563
+                                              .gray MasterCard World
+                                        .card.flex__start
+                                            img.card-logo(src='images/visa-small.svg')
+                                            div
+                                                .card__number.align__center.flex__start
+                                                    span.card__code.h3  •••• •••• ••••
+                                                    span.card__end 1994
+                                                .gray Visa Classic
+                                        .btn-card.smaller привязать другую карту
+                                p.gray.body  Имя
+                                input(placeholder='Имя', value='Константин')
+                                p.gray.body  Фамилия
+                                input(placeholder='Фамилия', value='Константинопольский')
+                                p.gray.body  Сумма в BYN
+                                .summa.flex__start.align__center.flex__wrap
+                                    div.input-wrapper
+                                        input(placeholder='0.00')
+                                        span BYN
+                                    div.small Минимальная сумма вывода составляет 3 BYN. #[br] Для вывода суммы более 1500 BYN – обратись в #[a(href='#', class='orange') Cлужбу поддержки.]
+
+                                button.btn-output.animation.body ВЫвести Средства
+                                .confident.flex__start
+                                    img(src='images/lock.locked.svg')
+                                    span.small Гарантируем конфиденциальность информации!
+                            .block.payment
+                                .h3.bold Последние выплаты
+                                .payment__inner
+                                    .payment__name.flex__between
+                                        .payment__column
+                                            span.small.bold операции
+                                        .payment__column
+                                            span.small.bold Дата и Время
+                                        .payment__column
+                                            span.small.bold Статус
+                                        .payment__column
+                                            span.small.bold сумма кэшбэка
+
+                                    .payment__item
+                                        .payment__title.flex__between.small
+                                            .payment__column.flex__start.align__center
+                                                img(src='images/play.svg').btn-play
+                                                span.payment__number •••• 5682
+                                                img(src='images/mc-small.svg', width='16')
+                                            .payment__column
+                                                span.gray 02.02.2020 21:06
+                                            .payment__column.flex__start.align__center.payment__status
+                                                img(src='images/hour.svg')
+                                                span.gray В ожидании
+                                            .payment__column #[span(class='bold') 2.00] BYN
+                                        .payment__detail
+                                            .flex__between.small
+                                                .payment__column
+                                                    .payment__info.gray
+                                                        div Номер заказа: #[span(class='bold') TO-2020-02-02-240430]
+                                                        div Сумма заказа: 94.16 BYN (46 $)
+                                                        div Дата заказа: 02.02.2020 21:06
+                                                .payment__column
+                                                .payment__column
+                                                    span.gray Кэшбэк принят и выплачен
+                                                .payment__column
+                                    .payment__item
+                                        .payment__title.flex__between.small
+                                            .payment__column.flex__start.align__center
+                                                img(src='images/play.svg').btn-play
+                                                span.payment__number •••• 3244
+                                                img(src='images/visa-small.svg', width='16')
+                                            .payment__column
+                                                span.gray 02.02.2020 15:23
+                                            .payment__column.flex__start.align__center.payment__status
+                                                img(src='images/hour.svg')
+                                                span.gray В ожидании
+                                            .payment__column #[span(class='bold') 12.00] BYN
+                                        .payment__detail
+                                            .flex__between.small
+                                                .payment__column
+                                                    .payment__info.gray
+                                                        div Номер заказа: #[span(class='bold') TO-2020-02-02-240430]
+                                                        div Сумма заказа: 94.16 BYN (46 $)
+                                                        div Дата заказа: 02.02.2020 21:06
+                                                .payment__column
+                                                .payment__column
+                                                    span.gray Кэшбэк принят и выплачен
+                                                .payment__column
+                                    .payment__item.active
+                                        .payment__title.flex__between.small
+                                            .payment__column.flex__start.align__center
+                                                img(src='images/play.svg').btn-play
+                                                span.payment__number •••• 5682
+                                                img(src='images/mc-small.svg', width='16')
+                                            .payment__column
+                                                span.gray 02.02.2020 13:09
+                                            .payment__column.flex__start.align__center.payment__status
+                                                img(src='images/ok.svg')
+                                                span.bold Переведен
+                                            .payment__column #[span(class='bold') 2.00] BYN
+                                        .payment__detail
+                                            .flex__between.small
+                                                .payment__column
+                                                    .payment__info.gray
+                                                        div Номер заказа: #[span(class='bold') TO-2020-02-02-240430]
+                                                        div Сумма заказа: 94.16 BYN (46 $)
+                                                        div Дата заказа: 02.02.2020 21:06
+                                                .payment__column
+                                                .payment__column
+                                                    span.gray Кэшбэк принят и выплачен
+                                                .payment__column
+                                    .payment__item
+                                        .payment__title.flex__between.small
+                                            .payment__column.flex__start.align__center
+                                                img(src='images/play.svg').btn-play
+                                                span.payment__number •••• 5682
+                                                img(src='images/mc-small.svg', width='16')
+                                            .payment__column
+                                                span.gray 02.02.2020 21:06
+                                            .payment__column.flex__start.align__center.payment__status
+                                                img(src='images/hour.svg')
+                                                span.gray В ожидании
+                                            .payment__column #[span(class='bold') 2.00] BYN
+                                        .payment__detail
+                                            .flex__between.small
+                                                .payment__column
+                                                    .payment__info.gray
+                                                        div Номер заказа: #[span(class='bold') TO-2020-02-02-240430]
+                                                        div Сумма заказа: 94.16 BYN (46 $)
+                                                        div Дата заказа: 02.02.2020 21:06
+                                                .payment__column
+                                                .payment__column
+                                                    span.gray Кэшбэк принят и выплачен
+                                                .payment__column
+                                    .payment__item
+                                        .payment__title.flex__between.small
+                                            .payment__column.flex__start.align__center
+                                                img(src='images/play.svg').btn-play
+                                                span.payment__number •••• 5682
+                                                img(src='images/mc-small.svg', width='16')
+                                            .payment__column
+                                                span.gray 02.02.2020 21:06
+                                            .payment__column.flex__start.align__center.payment__status
+                                                img(src='images/reject.svg')
+                                                span.gray Отменен
+                                            .payment__column #[span(class='bold') 2.00] BYN
+                                        .payment__detail
+                                            .flex__between.small
+                                                .payment__column
+                                                    .payment__info.gray
+                                                        div Номер заказа: #[span(class='bold') TO-2020-02-02-240430]
+                                                        div Сумма заказа: 94.16 BYN (46 $)
+                                                        div Дата заказа: 02.02.2020 21:06
+                                                .payment__column
+                                                .payment__column
+                                                    span.gray Кэшбэк принят и выплачен
+                                                .payment__column
+                                    .payment__item
+                                        .payment__title.flex__between.small
+                                            .payment__column.flex__start.align__center
+                                                img(src='images/play.svg').btn-play
+                                                span.payment__number •••• 5682
+                                                img(src='images/mc-small.svg', width='16')
+                                            .payment__column
+                                                span.gray 02.02.2020 21:06
+                                            .payment__column.flex__start.align__center.payment__status
+                                                img(src='images/hour.svg')
+                                                span.gray В ожидании
+                                            .payment__column #[span(class='bold') 2.00] BYN
+                                        .payment__detail
+                                            .flex__between.small
+                                                .payment__column
+                                                    .payment__info.gray
+                                                        div Номер заказа: #[span(class='bold') TO-2020-02-02-240430]
+                                                        div Сумма заказа: 94.16 BYN (46 $)
+                                                        div Дата заказа: 02.02.2020 21:06
+                                                .payment__column
+                                                .payment__column
+                                                    span.gray Кэшбэк принят и выплачен
+                                                .payment__column
+                                    .payment__item
+                                        .payment__title.flex__between.small
+                                            .payment__column.flex__start.align__center
+                                                img(src='images/play.svg').btn-play
+                                                span.payment__number •••• 3244
+                                                img(src='images/visa-small.svg', width='16')
+                                            .payment__column
+                                                span.gray 02.02.2020 15:23
+                                            .payment__column.flex__start.align__center.payment__status
+                                                img(src='images/hour.svg')
+                                                span.gray В ожидании
+                                            .payment__column #[span(class='bold') 12.00] BYN
+                                        .payment__detail
+                                            .flex__between.small
+                                                .payment__column
+                                                    .payment__info.gray
+                                                        div Номер заказа: #[span(class='bold') TO-2020-02-02-240430]
+                                                        div Сумма заказа: 94.16 BYN (46 $)
+                                                        div Дата заказа: 02.02.2020 21:06
+                                                .payment__column
+                                                .payment__column
+                                                    span.gray Кэшбэк принят и выплачен
+                                                .payment__column
+                                    .payment__item
+                                        .payment__title.flex__between.small
+                                            .payment__column.flex__start.align__center
+                                                img(src='images/play.svg').btn-play
+                                                span.payment__number •••• 5682
+                                                img(src='images/mc-small.svg', width='16')
+                                            .payment__column
+                                                span.gray 02.02.2020 13:09
+                                            .payment__column.flex__start.align__center.payment__status
+                                                img(src='images/ok.svg')
+                                                span.bold Переведен
+                                            .payment__column #[span(class='bold') 2.00] BYN
+                                        .payment__detail
+                                            .flex__between.small
+                                                .payment__column
+                                                    .payment__info.gray
+                                                        div Номер заказа: #[span(class='bold') TO-2020-02-02-240430]
+                                                        div Сумма заказа: 94.16 BYN (46 $)
+                                                        div Дата заказа: 02.02.2020 21:06
+                                                .payment__column
+                                                .payment__column
+                                                    span.gray Кэшбэк принят и выплачен
+                                                .payment__column
+                                    .payment__item
+                                        .payment__title.flex__between.small
+                                            .payment__column.flex__start.align__center
+                                                img(src='images/play.svg').btn-play
+                                                span.payment__number •••• 5682
+                                                img(src='images/mc-small.svg', width='16')
+                                            .payment__column
+                                                span.gray 02.02.2020 21:06
+                                            .payment__column.flex__start.align__center.payment__status
+                                                img(src='images/hour.svg')
+                                                span.gray В ожидании
+                                            .payment__column #[span(class='bold') 2.00] BYN
+                                        .payment__detail
+                                            .flex__between.small
+                                                .payment__column
+                                                    .payment__info.gray
+                                                        div Номер заказа: #[span(class='bold') TO-2020-02-02-240430]
+                                                        div Сумма заказа: 94.16 BYN (46 $)
+                                                        div Дата заказа: 02.02.2020 21:06
+                                                .payment__column
+                                                .payment__column
+                                                    span.gray Кэшбэк принят и выплачен
+                                                .payment__column
+                                        .payment__item
+                                            .payment__title.flex__between.small
+                                                .payment__column.flex__start.align__center
+                                                    img(src='images/play.svg').btn-play
+                                                    span.payment__number •••• 5682
+                                                    img(src='images/mc-small.svg', width='16')
+                                                .payment__column
+                                                    span.gray 02.02.2020 21:06
+                                                .payment__column.flex__start.align__center.payment__status
+                                                    img(src='images/reject.svg')
+                                                    span.gray Отменен
+                                                .payment__column #[span(class='bold') 2.00] BYN
+                                            .payment__detail
+                                                .flex__between.small
+                                                    .payment__column
+                                                        .payment__info.gray
+                                                            div Номер заказа: #[span(class='bold') TO-2020-02-02-240430]
+                                                            div Сумма заказа: 94.16 BYN (46 $)
+                                                            div Дата заказа: 02.02.2020 21:06
+                                                    .payment__column
+                                                    .payment__column
+                                                        span.gray Кэшбэк принят и выплачен
+                                                    .payment__column
+                                a(href='#', class='btn-more').flex.align__center.body
+                                    span Показать еще
+                                    img(src='images/play.svg')
+                                    .hidden-payment
+                                        .payment__item
+                                            .payment__title.flex__between.small
+                                                .payment__column.flex__start.align__center
+                                                    img(src='images/play.svg').btn-play
+                                                    span.payment__number •••• 5682
+                                                    img(src='images/mc-small.svg', width='16')
+                                                .payment__column
+                                                    span.gray 02.02.2020 13:09
+                                                .payment__column.flex__start.align__center.payment__status
+                                                    img(src='images/ok.svg')
+                                                    span.bold Переведен
+                                                .payment__column #[span(class='bold') 2.00] BYN
+                                            .payment__detail
+                                                .flex__between.small
+                                                    .payment__column
+                                                        .payment__info.gray
+                                                            div Номер заказа: #[span(class='bold') TO-2020-02-02-240430]
+                                                            div Сумма заказа: 94.16 BYN (46 $)
+                                                            div Дата заказа: 02.02.2020 21:06
+                                                    .payment__column
+                                                    .payment__column
+                                                        span.gray Кэшбэк принят и выплачен
+                                                    .payment__column
+                                        .payment__item
+                                            .payment__title.flex__between.small
+                                                .payment__column.flex__start.align__center
+                                                    img(src='images/play.svg').btn-play
+                                                    span.payment__number •••• 5682
+                                                    img(src='images/mc-small.svg', width='16')
+                                                .payment__column
+                                                    span.gray 02.02.2020 21:06
+                                                .payment__column.flex__start.align__center.payment__status
+                                                    img(src='images/hour.svg')
+                                                    span.gray В ожидании
+                                                .payment__column #[span(class='bold') 2.00] BYN
+                                            .payment__detail
+                                                .flex__between.small
+                                                    .payment__column
+                                                        .payment__info.gray
+                                                            div Номер заказа: #[span(class='bold') TO-2020-02-02-240430]
+                                                            div Сумма заказа: 94.16 BYN (46 $)
+                                                            div Дата заказа: 02.02.2020 21:06
+                                                    .payment__column
+                                                    .payment__column
+                                                        span.gray Кэшбэк принят и выплачен
+                                                    .payment__column
+                                        .payment__item
+                                            .payment__title.flex__between.small
+                                                .payment__column.flex__start.align__center
+                                                    img(src='images/play.svg').btn-play
+                                                    span.payment__number •••• 5682
+                                                    img(src='images/mc-small.svg', width='16')
+                                                .payment__column
+                                                    span.gray 02.02.2020 21:06
+                                                .payment__column.flex__start.align__center.payment__status
+                                                    img(src='images/reject.svg')
+                                                    span.gray Отменен
+                                                .payment__column #[span(class='bold') 2.00] BYN
+                                            .payment__detail
+                                                .flex__between.small
+                                                    .payment__column
+                                                        .payment__info.gray
+                                                            div Номер заказа: #[span(class='bold') TO-2020-02-02-240430]
+                                                            div Сумма заказа: 94.16 BYN (46 $)
+                                                            div Дата заказа: 02.02.2020 21:06
+                                                    .payment__column
+                                                    .payment__column
+                                                        span.gray Кэшбэк принят и выплачен
+                                                    .payment__column
+        footer
+            .container
+               .footer__top.flex__between
+                   .footer__item
+                       div.flex__start
+                           a(href='#')
+                               img(src='images/footer-logo.svg').footer__logo
+                           a(href='#').animation
+                               img(src='images/apple-footer.svg')
+                           a(href='#').animation
+                               img(src='images/android-footer.svg')
+                       p ООО «КешБэк Решение» УНП 193113029,  220007, РБ, г. Минск,  ул. Могилевская 39а, ком. 205. Свидетельство о регистрации №193113029, выд. 28.11.2018 г. Минским Горисполкомом
+                   .footer__map.flex__start
+                       .footer__column
+                           .footer__title Кэшбэк
+                           ul
+                               li
+                                    a(href='#')    Все магазины
+                               li
+                                   a(href='#')    Магазины с повышенным кэшбэком
+                       .footer__column
+                           .footer__title Сотрудничество
+                           ul
+                               li
+                                   a(href='#')    Партнерам
+                               li
+                                   a(href='#', class='marker')    Приведи друга
+                       .footer__column
+                           .footer__title Полезные ссылки
+                           ul
+                               li
+                                   a(href='#')    Правила покупок с кэшбэком
+                               li
+                                   a(href='#')    Как вывести свой кэшбэк
+                               li
+                                   a(href='#')
+                                        span Как получить кобренд–карту РРБ Банка
+                                        img(src='images/card.svg')
+                       .footer__column
+                           .footer__title Поддержка
+                           ul
+                               li
+                                   a(href='#')    Вопросы и ответы
+                               li
+                                   a(href='#')    Контакты
+               .footer__icons.flex__between.flex__wrap
+                   img(src='images/footer1.svg')
+                   img(src='images/footer2.svg')
+                   img(src='images/footer3.svg')
+                   img(src='images/footer4.svg')
+                   img(src='images/footer5.svg')
+                   img(src='images/footer6.svg')
+                   img(src='images/footer7.svg')
+                   img(src='images/footer8.svg')
+                   img(src='images/footer9.svg')
+                   img(src='images/footer10.svg')
+                   img(src='images/footer11.svg')
+                   img(src='images/footer12.svg')
+                   img(src='images/footer13.svg')
+               .footer__bottom.flex__between
+                   span  &copy Cashuback, 2020
+                   ul.flex__start.flex__wrap
+                       li
+                            a(href='#') Юридические документы
+                       li
+                           a(href='#') Клиентское соглашение
+                       li
+                           a(href='#') Файлы cookie
+        a(href='#', class='btn-sidebar')
+            img(src='images/profile-img.png', width=40)
+        script(src='js/scripts.min.js')
+        script(src='js/common.js')
