@@ -1,6 +1,6 @@
 #  Cashback test
 
-This project was implemented using technologies JQuery,  Sass, Gulp, BEM.
+This project was implemented using technologies JQuery,  Sass, Gulp, BEM, Pug.
 
 #### `git clone https://github.com/VadimVelikanets/cashback.git`
 
